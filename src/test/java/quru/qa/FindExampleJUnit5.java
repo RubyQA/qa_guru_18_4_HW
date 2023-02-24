@@ -22,8 +22,9 @@ public class FindExampleJUnit5 {
     void exampleJUnitCheck() {
         open("/selenide/selenide");
         $("#wiki-tab").click();
-        $("#wiki-body").shouldBe(text("Soft assertions"));
-        $(byText("Soft assertions")).click();
+        $("#wiki-pages-box .wiki-more-pages-link button").click();
+        $("#wiki-pages-box").shouldBe(text("SoftAssertions"));
+        $(byText("SoftAssertions")).click();
         $(".markdown-body").shouldHave(text("3. Using JUnit5 extend test class:"));
     }
 }
